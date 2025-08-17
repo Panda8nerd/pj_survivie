@@ -16,7 +16,6 @@ def main_app():
     dpg.create_viewport(title="Single Window with Pages", width=1920, height=1080)
 
     with dpg.window(label="Main App", width=1920, height=1080):
-        # default is vertical alligment
         with dpg.group(horizontal=True):
             dpg.add_button(label="Home", callback=lambda: show_page("page1"))
             dpg.add_button(label="Settings", callback=lambda: show_page("page2"))
@@ -24,18 +23,15 @@ def main_app():
 
         dpg.add_separator()
 
-        # Page 1
         with dpg.child_window(tag="page1", width=-1, height=-1):
             dpg.add_text("Welcome to the Home Page!")
             dpg.add_button(label="Say Hello", callback=lambda: print("Hello from Home!"))
-
-        # Page 2
+            
         with dpg.child_window(tag="page2", width=-1, height=-1, show=False):
             dpg.add_text("Settings Page")
             dpg.add_checkbox(label="Enable feature X")
             dpg.add_input_text(label="Username")
-
-        # Page 3
+            
         with dpg.child_window(tag="page3", width=-1, height=-1, show=False):
             dpg.add_text("Function Page")
             dpg.add_input_text(label="input atomic number of elements")
