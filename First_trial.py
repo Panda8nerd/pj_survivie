@@ -22,9 +22,9 @@ def main_app():
 
     with dpg.window(label="Main App", width=1920, height=1080):
         with dpg.group(horizontal=True):
-            dpg.add_button(label="Home", callback=lambda: show_page("page1"))
+            dpg.add_button(label="About", callback=lambda: show_page("page1"))
             dpg.add_button(label="Settings", callback=lambda: show_page("page2"))
-            dpg.add_button(label="About", callback=lambda: show_page("page3"))
+            dpg.add_button(label="Function", callback=lambda: show_page("page3"))
 
         dpg.add_separator()
 
@@ -38,7 +38,6 @@ def main_app():
             dpg.add_input_text(label="Username")
             
         with dpg.child_window(tag="page3", width=-1, height=-1, show=False):
-            dpg.add_text("Function Page")
             dpg.add_input_text(label="input atomic number of elements")
 
     dpg.setup_dearpygui()
