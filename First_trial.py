@@ -8,7 +8,12 @@ def show_page(page_tag):
     dpg.show_item(page_tag)
 ################################################################################################################################################################
 
-                  
+ def function3():
+    with dpg.texture_registry(show=False):
+        width, height, channels, data = dpg.load_image(your path to periodic photo file)
+        dpg.add_static_texture(width, height, data, tag="my_texture")
+    dpg.add_image("my_texture", width=1000, height=600)
+                     
 ################################################################################################################################################################
 def main_app():
     activate = False
